@@ -9,9 +9,6 @@ export function usePosts() {
   } = useQuery({
     queryKey: ['posts'],
     queryFn: getPosts,
-    onError: (err) => {
-      console.error(err);
-    },
   });
 
   return { posts, isLoading, error };

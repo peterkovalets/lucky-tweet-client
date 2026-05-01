@@ -5,13 +5,17 @@ import LinkButton from '../../ui/LinkButton';
 import FormRow from '../../ui/FormRow';
 import Input from '../../ui/Input';
 import PasswordInput from '../../ui/PasswordInput';
+import { useRegister } from './useRegister';
 
 function RegisterForm() {
-  const { register, handleSubmit, formState, getValues } = useForm();
+  const { register: registerAccount, isPending } = useRegister();
+  const { register, handleSubmit, formState, getValues, reset } = useForm();
   const { errors } = formState;
 
   function onSubmit(data) {
-    console.log(data);
+    registerAccount(data, {
+      onSettled: () => reset(),
+    });
   }
 
   return (
@@ -23,6 +27,7 @@ function RegisterForm() {
           <Input
             type="text"
             placeholder="Username"
+            disabled={isPending}
             error={errors?.username}
             {...register('username', {
               required: 'This field is required',
@@ -45,6 +50,7 @@ function RegisterForm() {
           <Input
             type="email"
             placeholder="Email"
+            disabled={isPending}
             error={errors?.email}
             {...register('email', {
               required: 'This field is required',
@@ -59,6 +65,7 @@ function RegisterForm() {
         <FormRow error={errors?.password?.message}>
           <PasswordInput
             placeholder="Create password"
+            disabled={isPending}
             error={errors?.password}
             {...register('password', {
               required: 'This field is required',
@@ -72,6 +79,7 @@ function RegisterForm() {
         <FormRow error={errors?.passwordConfirm?.message}>
           <PasswordInput
             placeholder="Confirm password"
+            disabled={isPending}
             error={errors?.passwordConfirm}
             {...register('passwordConfirm', {
               validate: (value) =>

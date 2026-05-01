@@ -6,6 +6,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ToastContainer } from 'react-toastify';
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,8 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+
+      <ToastContainer position="top-right" />
     </QueryClientProvider>
   );
 }
