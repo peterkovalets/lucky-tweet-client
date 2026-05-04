@@ -1,4 +1,4 @@
-import TagItem from './TagItem';
+import { TagItem } from './tag-item';
 
 const fakeTags = ['javascript', 'java', 'react'];
 
@@ -17,4 +17,4 @@ function PopularTags() {
   );
 }
 
-export default PopularTags;
+export { PopularTags };

@@ -13,4 +13,4 @@ function TagItem({ tag }) {
   );
 }
 
-export default TagItem;
+export { TagItem };

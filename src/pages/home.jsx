@@ -1,5 +1,5 @@
-import Posts from '../features/posts/Posts';
-import PopularTags from '../features/tags/PopularTags';
+import { Posts } from '../features/posts/posts';
+import { PopularTags } from '../features/tags/popular-tags';
 
 function Home() {
   return (
@@ -10,4 +10,4 @@ function Home() {
   );
 }
 
-export default Home;
+export { Home };

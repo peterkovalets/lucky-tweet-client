@@ -13,4 +13,4 @@ function Form({ children, onSubmit, size = 'medium' }) {
   );
 }
 
-export default Form;
+export { Form };

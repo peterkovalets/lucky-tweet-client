@@ -1,18 +1,21 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import AppLayout from './ui/AppLayout';
-import Home from './pages/Home';
-import Register from './pages/Register';
-import Login from './pages/Login';
-import NotFound from './pages/NotFound';
+import { AppLayout } from './components/ui/app-layout';
+import { Home } from './pages/home';
+import { Register } from './pages/register';
+import { Login } from './pages/login';
+import { NotFound } from './pages/not-found';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ToastContainer } from 'react-toastify';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false} />
+
       <BrowserRouter>
         <Routes>
           <Route element={<AppLayout />}>
@@ -29,4 +32,4 @@ function App() {
   );
 }
 
-export default App;
+export { App };

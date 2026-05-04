@@ -1,4 +1,4 @@
-import Container from './Container';
+import { Container } from './container';
 
 function Footer() {
   return (
@@ -10,4 +10,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export { Footer };

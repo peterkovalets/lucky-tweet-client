@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom';
-import Container from './Container';
-import Footer from './Footer';
-import Header from './Header';
-import Main from './Main';
+import { Container } from './container';
+import { Footer } from './footer';
+import { Header } from './header';
+import { Main } from './main';
 
 function AppLayout() {
   return (
@@ -18,4 +18,4 @@ function AppLayout() {
   );
 }
 
-export default AppLayout;
+export { AppLayout };

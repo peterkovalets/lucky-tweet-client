@@ -18,4 +18,4 @@ function LinkButton({ children, to }) {
   );
 }
 
-export default LinkButton;
+export { LinkButton };

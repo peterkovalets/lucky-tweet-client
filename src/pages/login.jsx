@@ -1,4 +1,4 @@
-import LoginForm from '../features/authentication/LoginForm';
+import { LoginForm } from '../features/authentication/login-form';
 
 function Login() {
   return (
@@ -8,4 +8,4 @@ function Login() {
   );
 }
 
-export default Login;
+export { Login };

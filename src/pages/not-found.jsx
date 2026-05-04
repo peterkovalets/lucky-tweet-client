@@ -1,4 +1,4 @@
-import LinkButton from '../ui/LinkButton';
+import { LinkButton } from '../components/ui/link-button';
 
 function NotFound() {
   return (
@@ -12,4 +12,4 @@ function NotFound() {
   );
 }
 
-export default NotFound;
+export { NotFound };

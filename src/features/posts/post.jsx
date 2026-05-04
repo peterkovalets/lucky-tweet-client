@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { HiOutlineChatBubbleLeft, HiOutlineEye } from 'react-icons/hi2';
-import { formatDate } from '../../utils/helpers';
+import { formatDate } from '@/utils/helpers';
 
 function Post({ post }) {
   const { id, title, imageUrl, createdAt, author } = post;
@@ -52,4 +52,4 @@ function Post({ post }) {
   );
 }
 
-export default Post;
+export { Post };

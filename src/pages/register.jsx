@@ -1,4 +1,4 @@
-import RegisterForm from '../features/authentication/RegisterForm';
+import { RegisterForm } from '../features/authentication/register-form';
 
 function Register() {
   return (
@@ -8,4 +8,4 @@ function Register() {
   );
 }
 
-export default Register;
+export { Register };

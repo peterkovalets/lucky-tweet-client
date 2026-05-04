@@ -1,4 +1,4 @@
-import Post from './Post';
+import { Post } from './post';
 import { usePosts } from './usePosts';
 
 function Posts() {
@@ -19,4 +19,4 @@ function Posts() {
   );
 }
 
-export default Posts;
+export { Posts };

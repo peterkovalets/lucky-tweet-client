@@ -7,4 +7,4 @@ function FormRow({ children, error }) {
   );
 }
 
-export default FormRow;
+export { FormRow };
