@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { HiOutlineChatBubbleLeft, HiOutlineEye } from 'react-icons/hi2';
 import { formatDate } from '@/utils/helpers';
 
 function Post({ post }) {
@@ -36,11 +35,11 @@ function Post({ post }) {
               </ul>
               <div className="mt-5 flex items-center gap-5 text-slate-500">
                 <div className="flex items-center gap-1">
-                  <HiOutlineChatBubbleLeft className="h-5 w-5" />
+                  {/* <HiOutlineChatBubbleLeft className="h-5 w-5" /> */}
                   <span className="text-sm">{numViews}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <HiOutlineEye className="h-5 w-5" />
+                  {/* <HiOutlineEye className="h-5 w-5" /> */}
                   <span className="text-sm">{numComments}</span>
                 </div>
               </div>
