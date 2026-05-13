@@ -17,6 +17,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useUser } from '@/features/authentication/useUser';
 import { Link } from 'react-router-dom';
+import { DEFAULT_AVATAR_URL } from '@/utils/constants';
 
 function DropdownMenuAvatar() {
   const { user } = useUser();
@@ -27,7 +28,7 @@ function DropdownMenuAvatar() {
         <Button variant="ghost" size="icon" className="rounded-full">
           <Avatar>
             <AvatarImage
-              src={user.avatarUrl ?? '/default-avatar.png'}
+              src={user.avatarUrl ?? DEFAULT_AVATAR_URL}
               alt={`${user.username}'s avatar`}
             />
             <AvatarFallback>${user.username}'s avatar</AvatarFallback>
