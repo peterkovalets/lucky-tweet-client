@@ -3,7 +3,7 @@ import { Logo } from './logo';
 import { Button } from './button';
 import { useUser } from '@/features/authentication/useUser';
 import { Link } from 'react-router-dom';
-import { DropdownMenuAvatar } from '../dropdown-menu-avatar';
+import { DropdownMenuAvatar } from './dropdown-menu-avatar';
 
 function Header() {
   const { isLoading, isAuthenticated } = useUser();

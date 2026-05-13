@@ -10,15 +10,20 @@ import {
 } from '@/components/ui/field';
 import { Link } from 'react-router-dom';
 import { useLogin } from '@/features/authentication/useLogin';
+import { useQueryClient } from '@tanstack/react-query';
 
 function LoginForm() {
   const { login, isPending } = useLogin();
+  const queryClient = useQueryClient();
   const form = useForm({
     defaultValues: { username: '', password: '' },
   });
 
   function onSubmit(data) {
-    login(data, { onSettled: () => form.reset() });
+    login(data, {
+      onSettled: () => form.reset(),
+      onSuccess: () => queryClient.invalidateQueries({ queryKey: ['user'] }),
+    });
   }
 
   return (

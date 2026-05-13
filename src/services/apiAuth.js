@@ -1,13 +1,21 @@
 import axios from './axios';
 
 export async function register(user) {
-  const { data } = await axios.post('/auth/register', user);
-  return data;
+  try {
+    const { data } = await axios.post('/auth/register', user);
+    return data;
+  } catch (error) {
+    throw new Error(error.response.data.error);
+  }
 }
 
 export async function login(user) {
-  const { data } = await axios.post('/auth/login', user);
-  return data;
+  try {
+    const { data } = await axios.post('/auth/login', user);
+    return data;
+  } catch (error) {
+    throw new Error(error.response.data.error);
+  }
 }
 
 export async function getCurrentUser() {
