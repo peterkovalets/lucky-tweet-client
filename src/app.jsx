@@ -11,6 +11,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ProtectedRoute } from './features/authentication/protected-route';
 import { Profile } from './pages/profile';
 import { PublicOnlyRoute } from './features/authentication/public-only-route';
+import { AddPost } from './pages/add-post';
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Profile />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="posts/new"
+              element={
+                <ProtectedRoute>
+                  <AddPost />
                 </ProtectedRoute>
               }
             />

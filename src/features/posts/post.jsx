@@ -1,8 +1,17 @@
 import { Link } from 'react-router-dom';
 import { formatDate } from '@/utils/helpers';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { DEFAULT_AVATAR_URL } from '@/utils/constants';
 
 function Post({ post }) {
-  const { id, title, imageUrl, createdAt, author } = post;
+  const {
+    id,
+    title,
+    thumbnailUrl,
+    authorUsername,
+    authorAvatarUrl,
+    createdAt,
+  } = post;
   const numViews = 23;
   const numComments = 14;
   const tags = ['Java', 'DevOps'];
@@ -11,17 +20,19 @@ function Post({ post }) {
     <li>
       <Link to={`/posts/${id}`}>
         <div className="overflow-hidden rounded-md border-2 border-slate-200 bg-slate-50 transition-colors duration-300 hover:border-slate-400">
-          {imageUrl && <img src={imageUrl} alt={title} className="w-full" />}
+          {thumbnailUrl && (
+            <img src={thumbnailUrl} alt={title} className="w-full" />
+          )}
           <div className="flex gap-3 p-6">
-            <div>
-              <img
-                src={author.avatarUrl}
-                alt={author.name}
-                className="mt-2 rounded-full"
+            <Avatar>
+              <AvatarImage
+                src={authorAvatarUrl ?? DEFAULT_AVATAR_URL}
+                alt={`${authorUsername}'s avatar`}
               />
-            </div>
+              <AvatarFallback>${authorUsername}'s avatar</AvatarFallback>
+            </Avatar>
             <div>
-              <h5 className="font-medium">{author}</h5>
+              <h5 className="font-medium">{authorUsername}</h5>
               <time className="text-sm text-slate-500">
                 {formatDate(createdAt)}
               </time>
