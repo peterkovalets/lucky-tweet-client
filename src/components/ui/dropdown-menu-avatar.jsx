@@ -16,6 +16,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useUser } from '@/features/authentication/useUser';
+import { Link } from 'react-router-dom';
 
 function DropdownMenuAvatar() {
   const { user } = useUser();
@@ -37,7 +38,7 @@ function DropdownMenuAvatar() {
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <CircleUserIcon />
-            Profile
+            <Link to="profile">Profile</Link>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <SettingsIcon />
