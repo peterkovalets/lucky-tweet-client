@@ -1,4 +1,4 @@
-import { ProfileDetails } from '@/features/authentication/profile-details';
+import { ProfileDetails } from '@/components/ui/profile-details';
 import { useUser } from '@/features/authentication/useUser';
 
 function Profile() {
