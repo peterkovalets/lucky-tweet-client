@@ -11,9 +11,11 @@ function Posts() {
   return (
     <div className="grow">
       <ul className="space-y-5">
-        {posts.map((post) => (
-          <Post post={post} key={post.id} />
-        ))}
+        {posts.length !== 0 ? (
+          posts.map((post) => <Post post={post} key={post.id} />)
+        ) : (
+          <p>No posts yet.</p>
+        )}
       </ul>
     </div>
   );

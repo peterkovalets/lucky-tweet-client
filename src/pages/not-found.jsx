@@ -1,15 +1,7 @@
-import { LinkButton } from '../components/ui/link-button';
+import { Error } from '@/components/ui/error';
 
 function NotFound() {
-  return (
-    <div className="text-center">
-      <h2 className="text-4xl font-semibold">Error 404</h2>
-      <h3 className="mb-6 mt-2 text-3xl font-semibold text-slate-700">
-        Page not found 😢
-      </h3>
-      <LinkButton to="-1">&larr; Go back</LinkButton>
-    </div>
-  );
+  return <Error title="Error 404" content="Page not found 😢" />;
 }
 
 export { NotFound };

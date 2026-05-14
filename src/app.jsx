@@ -12,6 +12,7 @@ import { ProtectedRoute } from './features/authentication/protected-route';
 import { Profile } from './pages/profile';
 import { PublicOnlyRoute } from './features/authentication/public-only-route';
 import { AddPost } from './pages/add-post';
+import { PostPage } from './pages/post-page';
 
 const queryClient = new QueryClient();
 
@@ -56,6 +57,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route path="posts/:postId" element={<PostPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

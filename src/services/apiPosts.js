@@ -5,6 +5,11 @@ export async function getPosts() {
   return data;
 }
 
+export async function getPost(id) {
+  const { data } = await axios.get(`/posts/${id}`);
+  return data;
+}
+
 export async function createPost(post) {
   try {
     const { data } = await axios.post('/posts', post);
