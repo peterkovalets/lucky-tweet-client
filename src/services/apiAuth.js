@@ -22,3 +22,11 @@ export async function getCurrentUser() {
   const { data } = await axios.get('/auth/profile');
   return data;
 }
+
+export async function logout() {
+  try {
+    await axios.post('/auth/logout');
+  } catch (error) {
+    throw new Error(error.response.data.error);
+  }
+}

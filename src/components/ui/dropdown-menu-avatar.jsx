@@ -16,11 +16,13 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useUser } from '@/features/authentication/useUser';
+import { useLogout } from '@/features/authentication/useLogout';
 import { Link } from 'react-router-dom';
 import { DEFAULT_AVATAR_URL } from '@/utils/constants';
 
 function DropdownMenuAvatar() {
   const { user } = useUser();
+  const { logout, isPending } = useLogout();
 
   return (
     <DropdownMenu>
@@ -51,7 +53,7 @@ function DropdownMenuAvatar() {
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={() => logout()} disabled={isPending}>
           <LogOutIcon />
           Sign Out
         </DropdownMenuItem>
