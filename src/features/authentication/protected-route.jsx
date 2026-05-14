@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from './useUser';
 
-function ProtectedRoute({ children }) {
+function ProtectedRoute({ children, fallback = null }) {
   const { isAuthenticated, isLoading, error } = useUser();
   const navigate = useNavigate();
 
@@ -11,7 +11,7 @@ function ProtectedRoute({ children }) {
       navigate('/login', { replace: true });
   }, [isAuthenticated, isLoading, error, navigate]);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return fallback;
   if (error) return <p>Something went wrong. Try again later.</p>;
 
   return children;

@@ -10,6 +10,7 @@ import { ToastContainer } from 'react-toastify';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ProtectedRoute } from './features/authentication/protected-route';
 import { Profile } from './pages/profile';
+import { ProfileDetailsSkeleton } from './components/ui/profile-details-skeleton';
 import { PublicOnlyRoute } from './features/authentication/public-only-route';
 import { AddPost } from './pages/add-post';
 import { PostPage } from './pages/post-page';
@@ -44,7 +45,7 @@ function App() {
             <Route
               path="profile"
               element={
-                <ProtectedRoute>
+                <ProtectedRoute fallback={<ProfileDetailsSkeleton />}>
                   <Profile />
                 </ProtectedRoute>
               }

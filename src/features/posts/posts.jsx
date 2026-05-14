@@ -1,10 +1,11 @@
 import { Post } from './post';
+import { PostsSkeleton } from './posts-skeleton';
 import { usePosts } from './usePosts';
 
 function Posts() {
   const { posts, isLoading, error } = usePosts();
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <PostsSkeleton />;
 
   if (error) return <p>Something went wrong. Try again later.</p>;
 

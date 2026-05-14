@@ -4,11 +4,12 @@ import { Button } from './button';
 import { useUser } from '@/features/authentication/useUser';
 import { Link } from 'react-router-dom';
 import { DropdownMenuAvatar } from './dropdown-menu-avatar';
+import { HeaderSkeleton } from './header-skeleton';
 
 function Header() {
   const { isLoading, isAuthenticated } = useUser();
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <HeaderSkeleton />;
 
   return (
     <header className="border-b border-slate-200 bg-slate-50 py-4">
