@@ -19,8 +19,13 @@ export async function login(user) {
 }
 
 export async function getCurrentUser() {
-  const { data } = await axios.get('/auth/profile');
-  return data;
+  try {
+    const { data } = await axios.get('/auth/profile');
+    return data;
+  } catch (error) {
+    if (error.response?.status === 401) return null;
+    throw error;
+  }
 }
 
 export async function logout() {
