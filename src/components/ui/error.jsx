@@ -1,13 +1,18 @@
-import { LinkButton } from './link-button';
+import { useNavigate } from 'react-router-dom';
+import { Button } from './button';
 
 function Error({ title, content }) {
+  const navigate = useNavigate();
+
   return (
     <div className="text-center">
       <h2 className="text-4xl font-semibold">{title}</h2>
-      <h3 className="mb-6 mt-2 text-3xl font-semibold text-slate-700">
+      <h3 className="mt-2 mb-6 text-3xl font-semibold text-muted-foreground">
         {content}
       </h3>
-      <LinkButton to="-1">&larr; Go back</LinkButton>
+      <Button variant="link" onClick={() => navigate(-1)}>
+        &larr; Go back
+      </Button>
     </div>
   );
 }

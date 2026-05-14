@@ -1,3 +1,4 @@
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { TagItem } from './tag-item';
 
 const fakeTags = ['javascript', 'java', 'react'];
@@ -6,14 +7,18 @@ function PopularTags() {
   const tags = fakeTags;
 
   return (
-    <div className="w-96 space-y-3 rounded-md bg-slate-50 py-4">
-      <h4 className="ml-4 text-xl font-medium">Popular tags</h4>
-      <ul>
-        {tags.map((tag) => (
-          <TagItem tag={tag} key={tag} />
-        ))}
-      </ul>
-    </div>
+    <Card className="w-96">
+      <CardHeader>
+        <CardTitle className="text-xl">Popular tags</CardTitle>
+      </CardHeader>
+      <CardContent className="px-0">
+        <ul>
+          {tags.map((tag) => (
+            <TagItem tag={tag} key={tag} />
+          ))}
+        </ul>
+      </CardContent>
+    </Card>
   );
 }
 
