@@ -6,7 +6,7 @@ import { Register } from './pages/register';
 import { Login } from './pages/login';
 import { NotFound } from './pages/not-found';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ToastContainer } from 'react-toastify';
+import { Toaster } from './components/ui/sonner';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ProtectedRoute } from './features/authentication/protected-route';
 import { Profile } from './pages/profile';
@@ -64,7 +64,7 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <ToastContainer position="top-right" />
+      <Toaster position="top-right" richColors />
     </QueryClientProvider>
   );
 }

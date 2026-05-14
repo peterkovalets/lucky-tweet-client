@@ -1,6 +1,6 @@
 import { createPost as createPostApi } from '@/services/apiPosts';
 import { useMutation } from '@tanstack/react-query';
-import { toast } from 'react-toastify';
+import { toast } from 'sonner';
 
 export function useCreatePost() {
   const { mutate: createPost, isPending } = useMutation({

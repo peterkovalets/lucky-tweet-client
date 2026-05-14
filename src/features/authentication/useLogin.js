@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { login as loginApi } from '@/services/apiAuth';
-import { toast } from 'react-toastify';
+import { toast } from 'sonner';
 
 export function useLogin() {
   const queryClient = useQueryClient();

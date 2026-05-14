@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { register as registerApi } from '@/services/apiAuth';
-import { toast } from 'react-toastify';
+import { toast } from 'sonner';
 
 export function useRegister() {
   const queryClient = useQueryClient();
