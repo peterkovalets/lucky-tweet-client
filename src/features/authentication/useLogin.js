@@ -1,11 +1,14 @@
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { login as loginApi } from '@/services/apiAuth';
 import { toast } from 'react-toastify';
 
 export function useLogin() {
+  const queryClient = useQueryClient();
+
   const { mutate: login, isPending } = useMutation({
     mutationFn: loginApi,
     onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['user'] });
       toast.success('Signed in successfully!');
     },
     onError: (err) => {

@@ -10,11 +10,9 @@ import {
   FieldLabel,
 } from '@/components/ui/field';
 import { Link } from 'react-router-dom';
-import { useQueryClient } from '@tanstack/react-query';
 
 function RegisterForm() {
   const { register: registerAccount, isPending } = useRegister();
-  const queryClient = useQueryClient();
   const form = useForm({
     defaultValues: {
       username: '',
@@ -25,10 +23,7 @@ function RegisterForm() {
   });
 
   function onSubmit(data) {
-    registerAccount(data, {
-      onSettled: () => form.reset(),
-      onSuccess: () => queryClient.invalidateQueries({ queryKey: ['user'] }),
-    });
+    registerAccount(data, { onSettled: () => form.reset() });
   }
 
   return (
