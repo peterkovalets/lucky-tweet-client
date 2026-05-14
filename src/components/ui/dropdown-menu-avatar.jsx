@@ -30,10 +30,10 @@ function DropdownMenuAvatar() {
         <Button variant="ghost" size="icon" className="rounded-full">
           <Avatar>
             <AvatarImage
-              src={user.avatarUrl ?? DEFAULT_AVATAR_URL}
-              alt={`${user.username}'s avatar`}
+              src={user?.avatarUrl ?? DEFAULT_AVATAR_URL}
+              alt={`${user?.username}'s avatar`}
             />
-            <AvatarFallback>${user.username}'s avatar</AvatarFallback>
+            <AvatarFallback>${user?.username}'s avatar</AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
