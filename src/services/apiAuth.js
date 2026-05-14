@@ -1,21 +1,13 @@
 import axios from './axios';
 
 export async function register(user) {
-  try {
-    const { data } = await axios.post('/auth/register', user);
-    return data;
-  } catch (error) {
-    throw new Error(error.response.data.error);
-  }
+  const { data } = await axios.post('/auth/register', user);
+  return data;
 }
 
 export async function login(user) {
-  try {
-    const { data } = await axios.post('/auth/login', user);
-    return data;
-  } catch (error) {
-    throw new Error(error.response.data.error);
-  }
+  const { data } = await axios.post('/auth/login', user);
+  return data;
 }
 
 export async function getCurrentUser() {
@@ -29,9 +21,5 @@ export async function getCurrentUser() {
 }
 
 export async function logout() {
-  try {
-    await axios.post('/auth/logout');
-  } catch (error) {
-    throw new Error(error.response.data.error);
-  }
+  await axios.post('/auth/logout');
 }
