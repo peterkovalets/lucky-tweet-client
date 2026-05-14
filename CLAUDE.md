@@ -13,7 +13,7 @@ No test runner is configured.
 
 ## Backend dependency
 
-The client expects an API at `http://localhost:8080/api` (configured in `src/services/axios.js`). Auth is cookie-based: the axios instance sets `withCredentials: true`, and `apiAuth.js`/`apiPosts.js` rely on the browser sending the session cookie — there is no token-in-header flow. If the API isn't running, every query will fail; mention this when a feature appears broken.
+The client expects an API at the URL set in `VITE_API_URL` (defaults to `http://localhost:8080/api` via the committed `.env`; override per-developer with `.env.local`). The axios instance in `src/services/axios.js` reads it as `import.meta.env.VITE_API_URL`. Auth is cookie-based: the axios instance sets `withCredentials: true`, and `apiAuth.js`/`apiPosts.js` rely on the browser sending the session cookie — there is no token-in-header flow. If the API isn't running, every query will fail; mention this when a feature appears broken.
 
 ## Architecture
 
